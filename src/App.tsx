@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import store from './redux/store'
+import Admin from './components/Admin'
+import User from './components/User'
+import CreateSurveyForm from './components/CreateSurveyForm'
+import SurveyList from './components/SurveyList'
+import SurveyPage from './components/SurveyPage'
+import Preview from './components/Preview'
 
-function App() {
+const App: React.FC = (): JSX.Element => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Provider store={store}>
+      <Router>
+        <Routes>
+          <Route path='/admin' element={<Admin />} />
+          <Route path='/user' element={<User />} />
+          <Route path='/create-survey' element={<CreateSurveyForm />} />
+          <Route path='/surveys' element={<SurveyList />} />
+          <Route path='/survey/:surveyId' element={<SurveyPage />} />
+          <Route path='/preview' element={<Preview />} />
+        </Routes>
+      </Router>
+    </Provider>
+  )
 }
 
-export default App;
+export default App
