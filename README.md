@@ -39,6 +39,40 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## Routes
+
+The application consists of the following routes:
+
+Admin
+
+- Path `/admin`
+- Landing page for the admin user to begin creating a survey
+
+User
+
+- Path `/User`
+- Landing page for a user to select and complete a survey
+
+Create Survey
+
+- Path `/create-survey`
+- Page on which the admin user creates a survey
+
+Survey List
+
+- Path `/surveys`
+- Page on which a user can select a survey to complete
+
+Survey Page
+
+- Path `/survey/:surveyId`
+- Dynamic route displays selected survey for a user to complete
+
+Preview
+
+- Path `/preview`
+- Page on which the admin user can preview a created survey
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
